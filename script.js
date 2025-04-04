@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let validPass = "12345";
 
         if (username === validUser && password === validPass) {
-            alert("Login successful!");
+            alert("✅ Login successful!");
             window.location.href = "dashboard.html"; // Redirect to dashboard
         } else {
-            alert("Invalid username or password.");
+            alert("❌ Invalid username or password.");
         }
     });
 
@@ -46,17 +46,36 @@ document.addEventListener("DOMContentLoaded", function () {
         let confirmPassword = document.querySelector("#registerForm input[placeholder='Confirm Password']").value.trim();
 
         if (fullName === "" || email === "" || username === "" || password === "" || confirmPassword === "") {
-            alert("All fields are required.");
+            alert("⚠️ All fields are required.");
             return;
         }
 
         if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+            alert("⚠️ Passwords do not match!");
             return;
         }
 
         // Simulating user registration (Replace with backend API)
-        alert("Registration successful! Please log in.");
+        alert("✅ Registration successful! Please log in.");
         showLogin(); // Redirect to login form
     });
+
+    // Fetch users from backend
+    fetch('http://localhost:4000/users')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('⚠️ Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const userList = document.getElementById('user-list');
+            userList.innerHTML = ''; // Clear old data
+            data.forEach(user => {
+                const li = document.createElement('li');
+                li.textContent = user.name;
+                userList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('❌ Error fetching users:', error));
 });
