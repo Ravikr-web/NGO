@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root',  // Use your MySQL username
-    password: 'Ravikr@2005',  // Use your actual password
-    database: 'crowdfunding_db'  // Ensure this database exists
+    user: 'root',           // MySQL username
+    password: 'Ravikr@2005',// MySQL password
+    database: 'crowdfunding_db'
 });
 
 connection.connect(err => {

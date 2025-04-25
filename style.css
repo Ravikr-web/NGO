@@ -274,7 +274,7 @@ body {
   position:absolute;
   top: 100px;
   right:100px;
-  background:transparent;
+  background:silver;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px gray;
@@ -303,4 +303,82 @@ input {
   margin-top: 10px;
 }
 
-  
+/* Donate Button Styling */
+.donate-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Payment Form Styling */
+.payment-form {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: #fff;
+  padding: 25px;
+  width: 350px;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.payment-form h2 {
+  margin-bottom: 20px;
+}
+
+/* Form Group Layout */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Hide extra payment fields until selected */
+.conditional {
+  display: none;
+}
+
+/* Close Button */
+.close-btn {
+  float: right;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: -10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
